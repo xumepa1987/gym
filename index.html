@@ -80,7 +80,7 @@ body{display:flex;flex-direction:column;max-width:430px;margin:0 auto;position:r
 .prog-wrap{height:3px;background:var(--bg3);flex-shrink:0;}
 .prog-fill{height:100%;background:var(--accent);transition:width .3s;}
 .prog-lbl{padding:5px 16px 8px;font-size:11px;color:var(--text2);flex-shrink:0;}
-.wt-ex-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.wt-ex-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden;flex-shrink:0;min-height:max-content;}
 .wt-ex-card+.wt-ex-card{margin-top:8px;}
 .wt-ex-hdr{padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;}
 .wt-ex-hdr:active{opacity:.8;}
@@ -105,6 +105,8 @@ body{display:flex;flex-direction:column;max-width:430px;margin:0 auto;position:r
 .add-set-btn:active{border-color:var(--accent);color:var(--accent);}
 .remove-ex-btn{margin-top:8px;background:none;border:none;font-size:12px;color:var(--red);cursor:pointer;font-family:inherit;padding:2px 0;opacity:.8;}
 .remove-ex-btn:active{opacity:1;}
+.rest-trigger-btn{width:auto;min-width:118px;flex:0 0 auto;margin:0!important;border:1.5px solid var(--accent)!important;border-radius:10px;color:var(--accent)!important;display:flex;align-items:center;justify-content:center;white-space:nowrap;padding:8px 12px;background:rgba(0,214,143,.08);}
+.rest-trigger-btn:active{opacity:.8;}
 
 /* CREATE */
 .muscle-tabs{display:flex;gap:6px;padding:10px 16px;overflow-x:auto;flex-shrink:0;}
@@ -746,7 +748,7 @@ function renderWt(){
         ${sets}
         <div style="display:flex;gap:8px;margin-top:4px">
           <button class="add-set-btn" style="flex:1;margin:0" data-addset="${i}">+ Подход</button>
-          <button class="add-set-btn" style="flex:0 0 auto;margin:0;border-color:var(--accent);color:var(--accent);padding:8px 12px" data-startrest="${i}"><i class="fa-regular fa-clock"></i> Отдых</button>
+          <button class="add-set-btn rest-trigger-btn" data-startrest="${i}"><i class="fa-regular fa-clock"></i> Отдых</button>
         </div>
         <button class="remove-ex-btn" data-removeex="${i}"><i class="fa-solid fa-trash" style="font-size:11px"></i> Убрать упражнение</button>
       </div>
